@@ -24,6 +24,8 @@ import (
 	capi "sigs.k8s.io/cluster-api/api/v1alpha4"
 
 	harvesterv1 "github.com/harvester/harvester/pkg/apis/harvesterhci.io/v1beta1"
+	// infortrendTestv1 "../apis/infortrendTest.io/v1beta1"
+	infortrendTestv1 "github.com/rd3public/harvester/pkg/apis/infortrendTest.io/v1beta1"
 )
 
 func main() {
@@ -50,6 +52,16 @@ func main() {
 				},
 				GenerateTypes:   true,
 				GenerateClients: true,
+			},
+			"infortrendTest.io":{
+				Types: []interface{}{
+					infortrendTestv1.Version{},
+					// infortrendTestv1.VirtualMachineBackup{},
+					// infortrendTestv1.VirtualMachineRestore{},
+					// infortrendTestv1.ModelDesign{},
+				},
+				GenerateTypes: true,
+				GenrateClients: true,
 			},
 			loggingv1.GroupVersion.Group: {
 				Types: []interface{}{
